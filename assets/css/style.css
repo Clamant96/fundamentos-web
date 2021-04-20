@@ -43,6 +43,11 @@ html, body {
 
     --button: #032a63;
 
+    --warning: #cc3300;
+    --ok: #339900;
+
+    --textarea: #767676;
+
 }
 
 ::-webkit-scrollbar {
@@ -211,6 +216,7 @@ section #sectionApresentacao #overlay #apresentacao h1 {
 section #sectionApresentacao #overlay #apresentacao > p {
     margin-top: 3%;
     margin-bottom: 2%;
+    
     width: 70%;
     height: auto;
 
@@ -302,6 +308,8 @@ section #sectionFerramentas #ferramentas {
     height: auto;
 
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 
 }
@@ -310,7 +318,23 @@ section #sectionFerramentas #ferramentas #bloco {
     margin-top: 4%;
     padding: 2%;
 
-    width: 46%;
+    /* 
+        950px <- width = 100%
+        950 / 2 = 475px <- 2 DIVs por linha
+        
+        compensar o padding de 2%
+        950 / 100% = 9,5px
+        1% = 9,5px
+
+        para cada 1% tem que se dobrar a QTD de pixels
+        padding 2% = 9,5 x 4 = 38px <- que dever ser descontados do width
+
+        COM ISSO FICAMOS COM:
+        475px - 38 = 437px
+        width: 437px;
+    */
+
+    width: 437px; 
     height: auto;
 
     display: flex;
@@ -766,15 +790,6 @@ section #apresentacao #formulario forms label {
 
 }
 
-section #apresentacao #formulario forms input {
-    margin: 1%;
-    padding: 1%;
-
-    width: 98%;
-    height: auto;
-
-}
-
 section #apresentacao #formulario forms textarea {
     margin: 1%;
     padding: 1%;
@@ -856,4 +871,291 @@ section #apresentacao #localizacao #mapa iframe {
     width: 100%;
     height: 40vh;
  
+}
+
+@media(max-width: 480px){
+    header nav {
+        width: 100%;
+
+        justify-content: center;
+    
+    }
+
+    header nav ul {
+        display: none;
+    
+    }
+
+    section #sectionApresentacao {
+        background-image: url(../img/planejamento.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    
+    }
+
+    section #sectionApresentacao #overlay #apresentacao h1 {
+        font-size: 4rem;
+    
+    }
+
+    section #sectionApresentacao #overlay #apresentacao > p {
+        margin-top: 3%;
+        margin-bottom: 2%;
+        
+        width: 100%;
+        height: auto;
+    
+    }
+
+    section #sectionApresentacao #overlay #apresentacao a {
+        padding: 2%;
+    
+        width: 30%;
+    
+    }
+
+    section #sectionFerramentas {
+        width: 96%;
+        height: auto;
+    
+    }
+
+    section #sectionFerramentas h2 {
+        font-size: 1.8rem;
+    
+    }
+
+    section #sectionFerramentas #ferramentas #bloco svg {
+        padding: 5%;
+    
+        width: 10%;
+        height: auto;
+    
+    }
+
+    section #sectionFerramentas #ferramentas #bloco #texto #titulo {
+        font-family: 'Vollkorn', serif;
+        font-size: 25px;
+        font-weight: 700;
+    
+        color: var(--text-black);
+    
+    }
+
+    section #sectionFerramentas #ferramentas #bloco #texto > p {
+        font-size: 14px;
+        font-weight: 400;
+    
+        color: var(--text-gray);
+    
+    }
+
+    section #sectionLayout {    
+        width: 96%;
+        height: auto;
+    
+    }
+
+    section #sectionLayout #layouts {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+
+    section #sectionLayout #layouts #img {
+        padding: 2%;
+    
+        width: 76%;
+        height: auto;
+    
+    }
+
+    section #sectionLayout #layouts #coteudo {
+        width: 80%;
+        height: auto;
+    
+    }
+
+    section #sectionLayout #layouts #coteudo > h2 {
+        font-size: 1.7rem;
+    
+    }
+
+    section #sectionLayout #layouts #coteudo > p {
+        font-size: 0.8rem;
+    
+    }
+
+    section #sectionLayout #layouts #coteudo a {
+        padding: 2%;
+    
+        width: 40%;
+        height: auto;
+    
+    }
+
+    hr {
+        margin-top: 5%;
+
+    }
+
+    footer #footer {
+        padding: 5%;
+
+        width: 90%;
+        height: auto;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    footer #footer #logo {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+
+    footer #footer #menu {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+
+    footer #footer #menu ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+
+    footer #footer #social {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+    } 
+
+    footer #footer #social #icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        flex-wrap: wrap;
+    
+        width: 60%;
+        height: auto;
+    
+    }
+
+    /* PAGE SOBRE */
+    section #sobreMim {
+        padding: 2%;
+    
+        width: 96%;
+        height: auto;
+        
+        flex-wrap: wrap;
+    
+    }
+
+    section #sobreMim #texto{
+        padding: 2%;
+    
+        width: 96%;
+        height: auto;
+    
+    }
+
+    section #sobreMim #perfil {
+        width: 50%;
+        height: auto;
+    
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    /* PAGE CONTATO */
+    section #contato {
+        flex-wrap: wrap;
+    
+        padding: 2%;
+    
+        width: 86%;
+        height: auto;
+    
+    }
+
+    section #contato > h1 {
+        font-size: 2.5rem;
+    
+    }
+
+    section #apresentacao {
+        flex-wrap: wrap;
+    
+        padding: 2%;
+    
+        width: 96%;
+        height: auto;
+    
+    }
+
+    section #apresentacao #formulario {
+        padding: 2%;
+    
+        width: 96%;
+        height: auto;
+    
+    }
+
+    section #apresentacao #formulario forms input {
+        width: 95% !important;
+        height: auto;
+    
+    }
+
+    section #apresentacao #formulario forms textarea {
+        width: 95% !important;
+        height: auto;
+    
+    }
+
+    section #apresentacao #formulario forms a {
+        margin: 1%;
+        padding: 1%;
+    
+        width: 20%;
+        height: auto;
+    
+    }
+
+    section #apresentacao #localizacao {
+        display: none;
+    
+    }
+
 }
