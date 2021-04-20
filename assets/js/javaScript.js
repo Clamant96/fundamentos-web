@@ -15,6 +15,7 @@
 let nome = window.document.querySelector('#nome') //querySelector('input#nome') <- E uma forma abreviada de escrever isso
 let email = window.document.querySelector('#email') //querySelector('input#email')
 let assunto = window.document.querySelector('#assunto') //querySelector('textarea#assunto')
+let botao = window.document.querySelector('#botao')
 
 let nomeOk
 let emailOk
@@ -122,7 +123,7 @@ function validaAssunto() {
 
 }
 
-function enviar() {
+botao.addEventListener('click', () => {
     if(nomeOk && emailOk && assuntoOk) {
         alert('Email enviado para o endereco '+ email.value)
     
@@ -130,8 +131,7 @@ function enviar() {
         alert('Preencha corretamente o fomulario antes de envialo')
 
     }
-
-}
+})
 
 function mapaZoom() {
     mapa.style.width = '100%'
